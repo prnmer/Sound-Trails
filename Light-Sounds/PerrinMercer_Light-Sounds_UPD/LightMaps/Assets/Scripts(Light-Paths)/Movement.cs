@@ -22,7 +22,9 @@ public class Movement : MonoBehaviour {
 
 	// 0 - violet, 1 - blue, 2 - red, 3 - yellow
 	int lastWallColor;
-	int newWallColor; 
+	int newWallColor;
+
+	int lastKeyPressed; 
 
 	Collider2D wall;
 
@@ -39,30 +41,25 @@ public class Movement : MonoBehaviour {
 	
 	}
 
-	//void OnTriggerEnter2D(Collider2D co) {
+	void OnTriggerEnter2D(Collider2D co) {
 
-		//if (co != wall){
-			//print("Collide");
-			//int rand = Random.Range(0, 4);
-			//switch (rand) {
-				//case 0:
-					//PureData.PlaySequence("Note_One");
-					//break;
-				//case 1:
-					//PureData.PlaySequence("Note_Two");
-					//break;
-				//case 2:
-					//PureData.PlaySequence("Note_Three");
-					//break;
-				//case 3:
-					//PureData.PlaySequence("Note_Four");
-					//break;
-				//default:
-					//break;
-				//}
+		if (co != wall){
+			
+			if (lastKeyPressed == 0){
+				Debug.Log ('Up');
+			}
+			else if (lastKeyPressed == 1){
+				Debug.Log ('Down');
+			}
+			else if (lastKeyPressed == 2){
+				Debug.Log ('Right');
+			}
+			else if (lastKeyPressed == 3){
+				Debug.Log ('Left');
+			}
 
-		//}
-	//}
+		}
+	}
 
 	void SpawnWall(){
 
@@ -131,12 +128,18 @@ public class Movement : MonoBehaviour {
 
 			SpawnWall();
 
+			lastKeyPressed = 0;
+			//Up
+
 		}
 		else if (Input.GetKeyDown(downKey)){
 
 			GetComponent<Rigidbody2D>().velocity = -Vector2.up * speed;
 
 			SpawnWall();
+
+			lastKeyPressed = 1;
+			//Down
 
 		}
 		else if (Input.GetKeyDown(rightKey)){
@@ -145,12 +148,18 @@ public class Movement : MonoBehaviour {
 
 			SpawnWall();
 
+			lastKeyPressed = 2;
+			//Right
+
 		}
 		else if (Input.GetKeyDown(leftKey)){
 
 			GetComponent<Rigidbody2D>().velocity = -Vector2.right * speed;
 
 			SpawnWall();
+
+			lastKeyPressed = 3;
+			//Left
 
 		}
 
