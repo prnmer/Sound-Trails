@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour {
 	public KeyCode ShiftKey;
 	public KeyCode EnterKey;
 
+	public KeyCode spaceBar;
+
 	public float speed = 16;
 
 	public GameObject lightWallPrefab_Violet;
@@ -25,6 +27,8 @@ public class Movement : MonoBehaviour {
 	int newWallColor;
 
 	int lastKeyPressed; 
+
+	bool changeColor;
 
 	Collider2D wall;
 
@@ -46,16 +50,16 @@ public class Movement : MonoBehaviour {
 		if (co != wall){
 			
 			if (lastKeyPressed == 0){
-				Debug.Log ('Up');
+				Debug.Log("Up", co);
 			}
 			else if (lastKeyPressed == 1){
-				Debug.Log ('Down');
+				Debug.Log("Down", co);
 			}
 			else if (lastKeyPressed == 2){
-				Debug.Log ('Right');
+				Debug.Log("Right", co);
 			}
 			else if (lastKeyPressed == 3){
-				Debug.Log ('Left');
+				Debug.Log("Left", co);
 			}
 
 		}

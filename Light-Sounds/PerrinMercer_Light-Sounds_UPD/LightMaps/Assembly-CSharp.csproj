@@ -46,7 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts(Light-Paths)\BluePlayer_Move.cs" />
      <Compile Include="Assets\Scripts(Light-Paths)\Movement.cs" />
+     <Compile Include="Assets\Scripts(Light-Paths)\RedPlayer_Move.cs" />
      <Compile Include="Assets\Scripts(Light-Paths)\ScreenLoop.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
