@@ -50,19 +50,76 @@ public class RedPlayer_Move : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D co) {
 
 		if (co != wall){
+
+			if (co.gameObject.tag == "BlueWall" || co.gameObject.tag == "VioletWall"){
+
+			if (changeColor = true){
 			
-			if (lastKeyPressed == 0){
-				Debug.Log ("Up", co);
+				if (lastKeyPressed == 0){
+
+					AudioSource audio = GetComponent<AudioSource>();
+					audio.PlayOneShot(High_Four);
+
+					Debug.Log ("Up", co);
+				}
+				else if (lastKeyPressed == 1){
+
+					AudioSource audio = GetComponent<AudioSource>();
+					audio.PlayOneShot(High_One);
+
+					Debug.Log ("Down", co);
+				}
+				else if (lastKeyPressed == 2){
+
+					AudioSource audio = GetComponent<AudioSource>();
+					audio.PlayOneShot(High_Three);
+
+					Debug.Log ("Right", co);
+				}
+				else if (lastKeyPressed == 3){
+
+					AudioSource audio = GetComponent<AudioSource>();
+					audio.PlayOneShot(High_Two);
+
+					Debug.Log ("Left", co);
+				}
+
 			}
-			else if (lastKeyPressed == 1){
-				Debug.Log ("Down", co);
+
+			else if (changeColor = false){
+				
+				if (lastKeyPressed == 0){
+
+					AudioSource audio = GetComponent<AudioSource>();
+					audio.PlayOneShot(MH_Four);
+
+					Debug.Log ("Up", co);
+				}
+				else if (lastKeyPressed == 1){
+
+					AudioSource audio = GetComponent<AudioSource>();
+					audio.PlayOneShot(MH_One);
+
+					Debug.Log ("Down", co);
+				}
+				else if (lastKeyPressed == 2){
+
+					AudioSource audio = GetComponent<AudioSource>();
+					audio.PlayOneShot(MH_Three);
+
+					Debug.Log ("Right", co);
+				}
+				else if (lastKeyPressed == 3){
+
+					AudioSource audio = GetComponent<AudioSource>();
+					audio.PlayOneShot(MH_Two);
+
+					Debug.Log ("Left", co);
+				}
+			
 			}
-			else if (lastKeyPressed == 2){
-				Debug.Log ("Right", co);
-			}
-			else if (lastKeyPressed == 3){
-				Debug.Log ("Left", co);
-			}
+
+		}
 
 		}
 	}

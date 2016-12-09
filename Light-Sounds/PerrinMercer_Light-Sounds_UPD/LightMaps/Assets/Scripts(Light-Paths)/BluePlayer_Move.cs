@@ -51,6 +51,8 @@ public class BluePlayer_Move : MonoBehaviour {
 
 		if (co != wall){
 
+			if (co.gameObject.tag == "RedWall" || co.gameObject.tag == "YellowWall"){
+
 			if (changeColor = true){
 			
 				if (lastKeyPressed == 0){
@@ -83,6 +85,41 @@ public class BluePlayer_Move : MonoBehaviour {
 				}
 
 			}
+
+			else if (changeColor = false){
+				
+				if (lastKeyPressed == 0){
+
+					AudioSource audio = GetComponent<AudioSource>();
+					audio.PlayOneShot(ML_Four);
+
+					Debug.Log ("Up", co);
+				}
+				else if (lastKeyPressed == 1){
+
+					AudioSource audio = GetComponent<AudioSource>();
+					audio.PlayOneShot(ML_One);
+
+					Debug.Log ("Down", co);
+				}
+				else if (lastKeyPressed == 2){
+
+					AudioSource audio = GetComponent<AudioSource>();
+					audio.PlayOneShot(ML_Three);
+
+					Debug.Log ("Right", co);
+				}
+				else if (lastKeyPressed == 3){
+
+					AudioSource audio = GetComponent<AudioSource>();
+					audio.PlayOneShot(ML_Two);
+
+					Debug.Log ("Left", co);
+				}
+			
+			}
+
+		}
 
 		}
 	}
