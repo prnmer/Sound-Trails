@@ -162,7 +162,9 @@ public class RedPlayer_Move : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (changeColor == true){
+		if (Input.GetKeyDown(rightCTRL)){
+
+			if (changeColor == true){
 			newWallColor = 0;
 			destroyLastWalls();
 		}
@@ -170,8 +172,6 @@ public class RedPlayer_Move : MonoBehaviour {
 			newWallColor = 1;
 			destroyLastWalls();
 		}
-
-		if (Input.GetKeyDown(rightCTRL)){
 
 			changeColor = !(changeColor);
 

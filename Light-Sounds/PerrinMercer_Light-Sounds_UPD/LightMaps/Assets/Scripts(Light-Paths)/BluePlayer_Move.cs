@@ -168,7 +168,10 @@ public class BluePlayer_Move : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (changeColor == true){
+
+		if (Input.GetKeyDown(spaceBar)){
+
+			if (changeColor == true){
 			newWallColor = 0;
 			destroyLastWalls();
 		}
@@ -176,16 +179,6 @@ public class BluePlayer_Move : MonoBehaviour {
 			newWallColor = 1;
 			destroyLastWalls();
 		}
-		//else if (Input.GetKeyDown(ShiftKey)){
-			//newWallColor = 2;
-			//destroyLastWalls();
-		//}
-		//else if (Input.GetKeyDown(EnterKey)){
-			//newWallColor = 3;
-			//destroyLastWalls();
-		//}
-
-		if (Input.GetKeyDown(spaceBar)){
 
 			changeColor = !(changeColor);
 
